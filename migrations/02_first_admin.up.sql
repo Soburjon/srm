@@ -1,0 +1,2 @@
+INSERT INTO users (id, full_name, role, phone_number, birthday, password, position)
+VALUES ('94B911F2-82CA-4156-9677-B759477A88E7','first admin','admin','+998901234567','2001-02-26','salom.4567','PM');

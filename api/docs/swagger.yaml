@@ -1,0 +1,1606 @@
+definitions:
+  models.AddPeopleProjectRequest:
+    properties:
+      position:
+        type: string
+      programmer_id:
+        type: string
+      project_id:
+        type: string
+    type: object
+  models.Attendance:
+    properties:
+      created_at:
+        type: string
+      type:
+        type: string
+    type: object
+  models.Commit:
+    properties:
+      created_at:
+        type: string
+      programmer_id:
+        type: string
+      text:
+        type: string
+    type: object
+  models.CreateCommitRequest:
+    properties:
+      task_id:
+        type: string
+      text:
+        type: string
+      user_id:
+        type: string
+    type: object
+  models.CreateProjectRequest:
+    properties:
+      attachments:
+        type: string
+      end_date:
+        type: string
+      name:
+        type: string
+      start_date:
+        type: string
+    type: object
+  models.CreateTaskRequest:
+    properties:
+      attachments:
+        type: string
+      description:
+        type: string
+      finish_at:
+        type: string
+      programmer_id:
+        type: string
+      project_id:
+        type: string
+      start_at:
+        type: string
+      title:
+        type: string
+    type: object
+  models.CreateUserRequest:
+    properties:
+      avatar:
+        type: string
+      birthday:
+        type: string
+      full_name:
+        type: string
+      password:
+        type: string
+      phone_number:
+        type: string
+      position:
+        type: string
+    type: object
+  models.EditCommitRequest:
+    properties:
+      created_at:
+        type: string
+      text:
+        type: string
+    type: object
+  models.EditProjectRequest:
+    properties:
+      attachments:
+        type: string
+      end_date:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      start_date:
+        type: string
+      status:
+        type: string
+    type: object
+  models.EditTaskRequest:
+    properties:
+      attachments:
+        type: string
+      description:
+        type: string
+      finish_at:
+        type: string
+      id:
+        type: string
+      programmer_id:
+        type: string
+      start_at:
+        type: string
+      title:
+        type: string
+    type: object
+  models.EditUserRequest:
+    properties:
+      avatar:
+        type: string
+      birthday:
+        type: string
+      full_name:
+        type: string
+      password:
+        type: string
+      phone_number:
+        type: string
+      position:
+        type: string
+      user_id:
+        type: string
+    type: object
+  models.GetAttendanceResponse:
+    properties:
+      attendances:
+        items:
+          $ref: '#/definitions/models.Attendance'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.GetCommitsResponse:
+    properties:
+      commits:
+        items:
+          $ref: '#/definitions/models.Commit'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.GetMyProjectsResponse:
+    properties:
+      count:
+        type: integer
+      projects:
+        items:
+          $ref: '#/definitions/models.Project'
+        type: array
+    type: object
+  models.GetProject:
+    properties:
+      attachments:
+        type: string
+      created_at:
+        type: string
+      end_date:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      start_date:
+        type: string
+      status:
+        type: string
+      teamlead_id:
+        type: string
+    type: object
+  models.GetProjectListsResponse:
+    properties:
+      count:
+        type: integer
+      projects:
+        items:
+          $ref: '#/definitions/models.Project'
+        type: array
+    type: object
+  models.GetProjectTasksResponse:
+    properties:
+      count:
+        type: integer
+      tasks:
+        items:
+          $ref: '#/definitions/models.GetTaskResponse'
+        type: array
+    type: object
+  models.GetTaskResponse:
+    properties:
+      attachments:
+        type: string
+      created_at:
+        type: string
+      description:
+        type: string
+      finish_at:
+        type: string
+      finished_at:
+        type: string
+      id:
+        type: string
+      programmer_id:
+        type: string
+      project_id:
+        type: string
+      start_at:
+        type: string
+      started_at:
+        type: string
+      status:
+        type: string
+      title:
+        type: string
+    type: object
+  models.GetUser:
+    properties:
+      avatar:
+        type: string
+      birthday:
+        type: string
+      created_at:
+        type: string
+      full_name:
+        type: string
+      phone_number:
+        type: string
+      position:
+        type: string
+      role:
+        type: string
+      user_id:
+        type: string
+    type: object
+  models.GetUserListResponse:
+    properties:
+      count:
+        type: integer
+      users:
+        items:
+          $ref: '#/definitions/models.User'
+        type: array
+    type: object
+  models.LoginResponse:
+    properties:
+      authorize:
+        type: string
+      user_id:
+        type: string
+    type: object
+  models.MyProjectsResponse:
+    properties:
+      count:
+        type: integer
+      project_ids:
+        items:
+          type: string
+        type: array
+    type: object
+  models.Project:
+    properties:
+      attachments:
+        type: string
+      created_at:
+        type: string
+      end_date:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      start_date:
+        type: string
+      status:
+        type: string
+      teamlead_id:
+        type: string
+    type: object
+  models.RegisterRequest:
+    properties:
+      password:
+        type: string
+      phone_number:
+        type: string
+    type: object
+  models.StandardErrorModel:
+    properties:
+      error:
+        type: string
+    type: object
+  models.SuccessMessage:
+    properties:
+      success:
+        type: boolean
+    type: object
+  models.UpdateProjectStatusRequest:
+    properties:
+      project_id:
+        type: string
+      status:
+        type: string
+    type: object
+  models.UpdateTaskStatusRequest:
+    properties:
+      status:
+        type: string
+      task_id:
+        type: string
+    type: object
+  models.User:
+    properties:
+      avatar:
+        type: string
+      birthday:
+        type: string
+      created_at:
+        type: string
+      full_name:
+        type: string
+      phone_number:
+        type: string
+      position:
+        type: string
+      user_id:
+        type: string
+    type: object
+  models.UsersInProjectResponse:
+    properties:
+      count:
+        type: integer
+      users:
+        items:
+          $ref: '#/definitions/models.Worker'
+        type: array
+    type: object
+  models.Worker:
+    properties:
+      position:
+        type: string
+      user_id:
+        type: string
+    type: object
+info:
+  contact:
+    name: Soburjon
+  description: This is an auto-generated API Docs.
+  termsOfService: http://swagger.io/terms/
+  title: API
+  version: "1"
+paths:
+  /admin/add-people-project/:
+    post:
+      consumes:
+      - application/json
+      description: |-
+        team lead tamonidan projectga odam qo'shish
+        position ga "team_lead","programmer","intern" larni yozish mumkin
+      parameters:
+      - description: add_people_project
+        in: body
+        name: add_people_project
+        required: true
+        schema:
+          $ref: '#/definitions/models.AddPeopleProjectRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: add people project
+      tags:
+      - admin
+  /admin/create-admin/:
+    post:
+      consumes:
+      - application/json
+      description: |-
+        create admin
+        avatar mazil yoziladi
+        birthday "2001-02-26" farmatda yoziladi
+      parameters:
+      - description: create_admin
+        in: body
+        name: create_admin
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: create admin
+      tags:
+      - admin
+  /admin/create-programmer/:
+    post:
+      consumes:
+      - application/json
+      description: |-
+        create programmer
+        avatar mazil yoziladi
+        birthday "2001-02-26" farmatda yoziladi
+      parameters:
+      - description: create_programmer
+        in: body
+        name: create_programmer
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: create programmer
+      tags:
+      - admin
+  /admin/create-project/:
+    post:
+      consumes:
+      - application/json
+      description: |-
+        create project
+        attachments mazil yoziladi
+        start va end date "2001-02-26" farmatda yoziladi
+      parameters:
+      - description: create_project
+        in: body
+        name: create_project
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateProjectRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: create project
+      tags:
+      - admin
+  /admin/delete-admin/{admin_id}/:
+    delete:
+      consumes:
+      - application/json
+      description: delete admin
+      parameters:
+      - description: admin_id
+        in: path
+        name: admin_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: delete admin
+      tags:
+      - admin
+  /admin/delete-programmer/{programmer_id}/:
+    delete:
+      consumes:
+      - application/json
+      description: delete programmer
+      parameters:
+      - description: programmer_id
+        in: path
+        name: programmer_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: delete programmer
+      tags:
+      - admin
+  /admin/delete-project/{project_id}/:
+    delete:
+      consumes:
+      - application/json
+      description: delete project
+      parameters:
+      - description: project_id
+        in: path
+        name: project_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: delete project
+      tags:
+      - admin
+  /admin/edit-admin/:
+    put:
+      consumes:
+      - application/json
+      description: |-
+        edit admin
+        avatar mazil yoziladi
+        birthday "2001-02-26" farmatda yoziladi
+      parameters:
+      - description: edit_admin
+        in: body
+        name: edit_admin
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: edit admin
+      tags:
+      - admin
+  /admin/edit-programmer/:
+    put:
+      consumes:
+      - application/json
+      description: |-
+        edit programmer
+        avatar mazil yoziladi
+        birthday "2001-02-26" farmatda yoziladi
+      parameters:
+      - description: edit_programmer
+        in: body
+        name: edit_programmer
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: edit programmer
+      tags:
+      - admin
+  /admin/edit-project/:
+    put:
+      consumes:
+      - application/json
+      description: |-
+        edit project
+        attachments mazil yoziladi
+        start va end date "2001-02-26" farmatda yoziladi
+      parameters:
+      - description: edit_project
+        in: body
+        name: edit_project
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditProjectRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: edit project
+      tags:
+      - admin
+  /admin/get-admin-list/:
+    get:
+      consumes:
+      - application/json
+      description: get admin list
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetUserListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get admin list
+      tags:
+      - admin
+  /admin/get-attendance/{programmer_id}/:
+    get:
+      consumes:
+      - application/json
+      description: get attendance
+      parameters:
+      - description: programmer_id
+        in: path
+        name: programmer_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetAttendanceResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get attendance
+      tags:
+      - admin
+  /admin/get-my-projects/:
+    get:
+      consumes:
+      - application/json
+      description: Admin team lead bolgan projectlari
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetMyProjectsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get my projects
+      tags:
+      - admin
+  /admin/get-programmer-list/:
+    get:
+      consumes:
+      - application/json
+      description: get programmer list
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetUserListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get programmer list
+      tags:
+      - admin
+  /admin/get-project-list/:
+    get:
+      consumes:
+      - application/json
+      description: get project list
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetProjectListsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get project list
+      tags:
+      - admin
+  /admin/get-project/{project_id}/:
+    get:
+      consumes:
+      - application/json
+      description: project haqida ma'lumotlari
+      parameters:
+      - description: project_id
+        in: path
+        name: project_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetProject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get project
+      tags:
+      - admin
+  /admin/get-user/{user_id}/:
+    get:
+      consumes:
+      - application/json
+      description: user haqida ma'lumotlari
+      parameters:
+      - description: user_id
+        in: path
+        name: user_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetUser'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get user
+      tags:
+      - admin
+  /admin/update-project-status/:
+    put:
+      consumes:
+      - application/json
+      description: |-
+        update project status
+        status ga "in_process","new","finished" larni yozish mumkin
+      parameters:
+      - description: update_project_status
+        in: body
+        name: update_project_status
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateProjectStatusRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: update project status
+      tags:
+      - admin
+  /programmer/add-people-project/:
+    post:
+      consumes:
+      - application/json
+      description: |-
+        team lead tamonidan projectga odam qo'shish
+        position ga "team_lead","programmer","intern" larni yozish mumkin
+      parameters:
+      - description: add_people_project
+        in: body
+        name: add_people_project
+        required: true
+        schema:
+          $ref: '#/definitions/models.AddPeopleProjectRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: add people project
+      tags:
+      - programmer
+  /programmer/create-attendance/{type}/:
+    post:
+      consumes:
+      - application/json
+      description: create attendance
+      parameters:
+      - description: type
+        in: path
+        name: type
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: create attendance
+      tags:
+      - programmer
+  /programmer/create-commit/:
+    post:
+      consumes:
+      - application/json
+      description: create commit
+      parameters:
+      - description: create_commit
+        in: body
+        name: create_commit
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateCommitRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: create commit
+      tags:
+      - programmer
+  /programmer/create-task/:
+    post:
+      consumes:
+      - application/json
+      description: |-
+        create task
+        Attachments mazil yoziladi
+        start va finish atlar "2001-02-26" farmatda yoziladi
+      parameters:
+      - description: create_task
+        in: body
+        name: create_task
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateTaskRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: create task
+      tags:
+      - programmer
+  /programmer/delete-commit/{created_at}/:
+    delete:
+      consumes:
+      - application/json
+      description: delete commit
+      parameters:
+      - description: created_at
+        in: path
+        name: created_at
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: delete commit
+      tags:
+      - programmer
+  /programmer/delete-task/{task_id}/:
+    delete:
+      consumes:
+      - application/json
+      description: delete task
+      parameters:
+      - description: task_id
+        in: path
+        name: task_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: delete task
+      tags:
+      - programmer
+  /programmer/edit-commit/:
+    put:
+      consumes:
+      - application/json
+      description: edit commit
+      parameters:
+      - description: edit_commit
+        in: body
+        name: edit_commit
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditCommitRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: edit commit
+      tags:
+      - programmer
+  /programmer/edit-task/:
+    put:
+      consumes:
+      - application/json
+      description: |-
+        edit task
+        Attachments mazil yoziladi
+        start va finish atlar "2001-02-26" farmatda yoziladi
+      parameters:
+      - description: edit_task
+        in: body
+        name: edit_task
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditTaskRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: edit task
+      tags:
+      - programmer
+  /programmer/get-commits/{task_id}/:
+    get:
+      consumes:
+      - application/json
+      description: get commits
+      parameters:
+      - description: task_id
+        in: path
+        name: task_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetCommitsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get commits
+      tags:
+      - programmer
+  /programmer/get-my-projects/:
+    get:
+      consumes:
+      - application/json
+      description: qatnashgan projectlari
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.MyProjectsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get my projects
+      tags:
+      - programmer
+  /programmer/get-my-tasks/{project_id}/:
+    get:
+      consumes:
+      - application/json
+      description: get my tasks
+      parameters:
+      - description: project_id
+        in: path
+        name: project_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetProjectTasksResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get my tasks
+      tags:
+      - programmer
+  /programmer/get-project-tasks/{project_id}/:
+    get:
+      consumes:
+      - application/json
+      description: get project tasks
+      parameters:
+      - description: project_id
+        in: path
+        name: project_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetProjectTasksResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get project tasks
+      tags:
+      - programmer
+  /programmer/get-project/{project_id}/:
+    get:
+      consumes:
+      - application/json
+      description: get project
+      parameters:
+      - description: project_id
+        in: path
+        name: project_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetProject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get project
+      tags:
+      - programmer
+  /programmer/get-task/{task_id}/:
+    get:
+      consumes:
+      - application/json
+      description: get task
+      parameters:
+      - description: task_id
+        in: path
+        name: task_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetTaskResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: get task
+      tags:
+      - programmer
+  /programmer/update-task-status/:
+    put:
+      consumes:
+      - application/json
+      description: |-
+        update task status
+        status ga "in_process","done","finished" larni yozish mumkin
+      parameters:
+      - description: update_task_status
+        in: body
+        name: update_task_status
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateTaskStatusRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: update task status
+      tags:
+      - programmer
+  /programmer/users-in-project/{project_id}/:
+    get:
+      consumes:
+      - application/json
+      description: projectdagi userlar
+      parameters:
+      - description: project_id
+        in: path
+        name: project_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UsersInProjectResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      security:
+      - ApiKeyAuth: []
+      summary: users in the project
+      tags:
+      - programmer
+  /register/login/:
+    post:
+      consumes:
+      - application/json
+      description: user id va authorize qaytaradi
+      parameters:
+      - description: login
+        in: body
+        name: login
+        required: true
+        schema:
+          $ref: '#/definitions/models.RegisterRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LoginResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: user id va authorize qaytaradi
+      tags:
+      - register
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
